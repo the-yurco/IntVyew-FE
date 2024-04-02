@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaRegEye, FaRegClock } from 'react-icons/fa';
 import '../index.css';
 
 interface Article {
@@ -27,6 +28,13 @@ const HomePage: React.FC = () => {
 		}
 	};
 
+	const calculateAverageReadTime = (description: string | null): number => {
+		if (!description) return 0;
+		const wordsPerMinute = 200;
+		const wordCount = description.split(' ').length;
+		return Math.ceil(wordCount / wordsPerMinute);
+	};
+
 	return (
 		<div className="container">
 			<h1 className="title">INTVYEW</h1>
@@ -37,13 +45,19 @@ const HomePage: React.FC = () => {
 							<div className="article">
 								<h2 className="article-title">{article.title}</h2>
 								<p className="article-description">{article.description}</p>
-								<div className="article-actions">
-									<button className="like-button">Like</button>
-									<button className="dislike-button">Dislike</button>
-									<Link to={`/article/${index}`} className="read-more-link">
-										Read More
-									</Link>
+								<div className="article-details">
+									<span className="article-tags">#News #Global</span>
+									<span className="article-watched-stats">
+										<FaRegEye /> 120 times
+									</span>
+									<span className="article-read-time">
+										<FaRegClock />{' '}
+										{calculateAverageReadTime(article.description)} min
+									</span>
 								</div>
+								<Link to={`/article/${index}`} className="read-more-link">
+									Read More
+								</Link>
 							</div>
 						</Link>
 					))}
