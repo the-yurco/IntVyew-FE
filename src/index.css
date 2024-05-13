@@ -29,7 +29,11 @@ body {
 	font-size: 1rem;
 	font-weight: 600;
 	color: rgba(0, 0, 0, 0.5);
-	margin-bottom: 20px;
+	padding: 1rem 0;
+	width: max-content;
+	/* border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	border-right: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .home-grid {
@@ -115,24 +119,29 @@ body {
 }
 
 .custom-header {
-	background-color: #333;
-	color: #fff;
-	padding: 1rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.header-wrapper {
+	width: 800px;
+	padding: 0 6rem;
 }
 
 .header-nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 0 1rem;
+	padding: 0.25rem 1rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .header-logo {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	font-weight: bold;
-	color: #fff;
+	color: rgba(0, 0, 0, 0.85);
 	text-decoration: none;
 }
 
@@ -143,18 +152,19 @@ body {
 }
 
 .header-link {
-	color: #fff;
+	color: rgba(0, 0, 0, 0.7);
 	text-decoration: none;
 	transition: color 0.3s ease;
+	font-size: 0.8rem;
 }
 
 .header-link:hover {
-	color: #1da1f2;
+	color: rgba(0, 0, 0, 0.85);
 }
 
 .custom-footer {
-	background-color: #333;
-	color: #fff;
+	/* background-color: #333; */
+	color: rgba(0, 0, 0, 0.85);
 	padding: 1rem 0;
 }
 
@@ -162,4 +172,8 @@ body {
 	max-width: 800px;
 	margin: 0 auto;
 	text-align: center;
+}
+
+.footer-content p {
+	font-size: 0.8rem;
 }
