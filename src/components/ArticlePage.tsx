@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import '../index.css';
 
 interface Article {
 	title: string;
 	description: string;
+	content: string;
 	url: string;
 }
 
