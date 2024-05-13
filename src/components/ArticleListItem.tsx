@@ -1,43 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaRegEye, FaRegClock } from 'react-icons/fa';
 
 interface ArticleListItemProps {
 	article: {
+		id: number;
 		title: string;
 		description: string;
 		url: string;
 		publishedAt: string;
-		content?: string;
+		urlToImage: string;
 	};
-	index: number;
 }
 
-const ArticleListItem: React.FC<ArticleListItemProps> = ({
-	article,
-	index
-}) => {
-	const calculateReadTime = (content: string) => {
-		const wordsPerMinute = 200;
-		const wordCount = content.split(' ').length;
-		return Math.ceil(wordCount / wordsPerMinute);
-	};
-
+const ArticleListItem: React.FC<ArticleListItemProps> = ({ article }) => {
 	return (
-		<Link to={`/article/${index}`} className="article-link">
-			<div className="article">
-				<h2 className="article-title">{article.title}</h2>
-				<p className="article-description">{article.description}</p>
-				<div className="article-details">
-					<span className="article-watched-stats">
-						<FaRegEye /> {Math.floor(Math.random() * 1000)} times
-					</span>
-					<span className="article-read-time">
-						<FaRegClock /> {calculateReadTime(article.content || '')} min
-					</span>
-					<span className="article-published-at">
-						{new Date(article.publishedAt).toDateString()}
-					</span>
+		<Link
+			to={`/article/${encodeURIComponent(article.id)}`}
+			className="tweet-card"
+		>
+			<div className="tweet-card-content">
+				<div className="tweet-card-body">
+					<img
+						src={article.urlToImage}
+						alt={article.title}
+						className="tweet-image"
+					/>
+					<h2 className="tweet-title">{article.title}</h2>
+					<p className="tweet-description">{article.description}</p>
+					<p className="tweet-published">
+						Published on {new Date(article.publishedAt).toDateString()}
+					</p>
 				</div>
 			</div>
 		</Link>
