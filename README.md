@@ -29,3 +29,6 @@ In the project directory, you can run the following scripts:
 - `npm run build`: Builds the app for production to the `build` folder.
 - `npm run eject`: Ejects from Create React App, allowing full control over configuration files (note: this is a one-way operation).
 
+## Author
+
+[Iurai]
