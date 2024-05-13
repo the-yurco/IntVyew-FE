@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 interface ArticleListItemProps {
 	article: {
-		id: number;
 		title: string;
 		description: string;
 		url: string;
@@ -15,7 +14,7 @@ interface ArticleListItemProps {
 const ArticleListItem: React.FC<ArticleListItemProps> = ({ article }) => {
 	return (
 		<Link
-			to={`/article/${encodeURIComponent(article.id)}`}
+			to={`/article/${encodeURIComponent(article.url)}`}
 			className="tweet-card"
 		>
 			<div className="tweet-card-content">

@@ -1,15 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ApiService from '../services/ApiServices';
+import { getArticleByUrl } from '../services/ApiServices';
+import '../index.css';
+
+interface Article {
+	title: string;
+	description: string;
+	url: string;
+}
 
 const ArticlePage: React.FC = () => {
-	const { url } = useParams<{ url?: string }>();
-	const [article, setArticle] = useState<any | null>(null);
+	const { url = '' } = useParams<{ url?: string }>();
+	const [article, setArticle] = useState<Article | null>(null);
 
 	useEffect(() => {
+		console.log('Fetching article...');
 		const fetchArticle = async () => {
 			try {
-				const data = await ApiService.getArticleByUrl(url ?? '');
+				if (!url) return;
+				const data = await getArticleByUrl(decodeURIComponent(url));
+				console.log('Article Data:', data);
 				setArticle(data);
 			} catch (error) {
 				console.error('Error fetching article:', error);
@@ -19,13 +29,20 @@ const ArticlePage: React.FC = () => {
 		fetchArticle();
 	}, [url]);
 
-	if (!article) return <div className="container mx-auto">Loading...</div>;
+	if (!article) return <div className="article-container">Loading...</div>;
 
 	return (
-		<div className="container mx-auto p-4">
-			<h1 className="text-2xl font-bold mb-4">{article.title}</h1>
-			<p className="text-gray-600 mb-4">{article.description}</p>
-			<p className="text-gray-800">{article.content}</p>
+		<div className="article-container">
+			<h1 className="article-title">{article.title}</h1>
+			<p className="article-description">{article.description}</p>
+			<a
+				className="read-more-link"
+				href={article.url}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Read More
+			</a>
 		</div>
 	);
 };
