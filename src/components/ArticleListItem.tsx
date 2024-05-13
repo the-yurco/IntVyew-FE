@@ -13,10 +13,7 @@ interface ArticleListItemProps {
 
 const ArticleListItem: React.FC<ArticleListItemProps> = ({ article }) => {
 	return (
-		<Link
-			to={`/article/${encodeURIComponent(article.url)}`}
-			className="tweet-card"
-		>
+		<Link to={article.url} className="tweet-card">
 			<div className="tweet-card-content">
 				<div className="tweet-card-body">
 					<img
