@@ -14,23 +14,3 @@ export async function getTopHeadlines() {
 		throw error;
 	}
 }
-
-export async function getArticleByUrl(url: string) {
-	try {
-		console.log('Fetching article from URL:', url);
-		const response = await fetch(
-			`https://newsapi.org/v2/everything?url=${encodeURIComponent(
-				url
-			)}&apiKey=${API_KEY}`
-		);
-		if (!response.ok) {
-			throw new Error('Failed to fetch article');
-		}
-		const data = await response.json();
-		console.log('Article Data:', data);
-		return data.articles[0];
-	} catch (error) {
-		console.error('Error fetching article:', error);
-		throw error;
-	}
-}
