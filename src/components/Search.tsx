@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 
 interface SearchProps {
 	onSearch: (query: string) => void;
@@ -14,16 +15,16 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
 
 	return (
 		<form onSubmit={handleSearch} className="search-form">
-			<input
-				type="text"
-				placeholder="Search by title..."
-				value={query}
-				onChange={(e) => setQuery(e.target.value)}
-				className="search-input"
-			/>
-			<button type="submit" className="search-button">
-				Search
-			</button>
+			<div className="search-container">
+				<input
+					type="text"
+					placeholder="Search by title..."
+					value={query}
+					onChange={(e) => setQuery(e.target.value)}
+					className="search-input"
+				/>
+				<FaSearch className="search-icon" />
+			</div>
 		</form>
 	);
 };

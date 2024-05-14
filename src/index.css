@@ -35,7 +35,7 @@ body {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	color: rgba(0, 0, 0, 0.5);
 	padding: 0.3rem 1rem;
-	border-radius: 0.3rem;
+	border-radius: 1rem;
 	width: max-content;
 	/* border-top: 1px solid rgba(0, 0, 0, 0.1);
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -216,26 +216,39 @@ body {
 
 .search-form {
 	display: flex;
-	gap: 0.3rem;
+	justify-content: center; /* Center the form */
+}
+
+.search-container {
+	position: relative;
 }
 
 .search-input {
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	padding: 0.3rem 0.5rem;
-	border-radius: 0.3rem;
+	padding: 0.4rem 2rem 0.4rem 0.7rem;
+	border-radius: 1rem;
+	transition: all 0.3s;
+	font-size: 0.8rem;
 }
 
-.search-button {
-	padding: 0 0.5rem;
-	font-size: 0.65rem;
+.search-input:focus {
+	box-shadow: none;
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.search-icon {
+	position: absolute;
+	top: 50%;
+	right: 0.5rem;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	color: rgba(0, 0, 0, 0.3);
 	font-weight: 400;
-	background-color: rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 0.3rem;
-	transition: background-color 0.3s;
+	font-size: 0.9rem;
 }
 
-.search-button:hover {
-	background-color: rgba(0, 0, 0, 0.2);
-	cursor: pointer;
+.search-icon:focus {
+	outline: none;
 }
