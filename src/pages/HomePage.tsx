@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
 
 	const handleSearch = (query: string) => {
 		const filtered = articles.filter((article) =>
-			article.title.toLowerCase().includes(query.toLowerCase())
+			article.title.toLowerCase().startsWith(query.toLowerCase())
 		);
 		setFilteredArticles(filtered);
 	};
