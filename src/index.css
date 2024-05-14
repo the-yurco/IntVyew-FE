@@ -22,14 +22,20 @@ body {
 .home-head {
 	width: 100%;
 	padding: 0 5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
 }
 
 .home-title {
 	text-align: start;
-	font-size: 1rem;
-	font-weight: 600;
+	font-size: 0.9rem;
+	font-weight: 500;
+	border: 1px solid rgba(0, 0, 0, 0.1);
 	color: rgba(0, 0, 0, 0.5);
-	padding: 1rem 0;
+	padding: 0.3rem 1rem;
+	border-radius: 0.3rem;
 	width: max-content;
 	/* border-top: 1px solid rgba(0, 0, 0, 0.1);
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -134,8 +140,8 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.25rem 1rem;
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 0.25rem 0.3rem;
+	/* border: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .header-logo {
@@ -206,4 +212,30 @@ body {
 
 .read-more-link:hover {
 	opacity: 0.8;
+}
+
+.search-form {
+	display: flex;
+	gap: 0.3rem;
+}
+
+.search-input {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 0.3rem 0.5rem;
+	border-radius: 0.3rem;
+}
+
+.search-button {
+	padding: 0 0.5rem;
+	font-size: 0.65rem;
+	font-weight: 400;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.3rem;
+	transition: background-color 0.3s;
+}
+
+.search-button:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
