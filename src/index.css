@@ -45,7 +45,6 @@ body {
 .home-grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	/* grid-gap: 20px; */
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
 	border-right: 1px solid rgba(0, 0, 0, 0.1);
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -140,15 +139,12 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.25rem 0.3rem;
+	padding: 1rem 0.3rem 0 0.3rem;
 	/* border: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
-.header-logo {
-	font-size: 1rem;
-	font-weight: bold;
-	color: rgba(0, 0, 0, 0.85);
-	text-decoration: none;
+.header-logo img {
+	height: 1.5rem;
 }
 
 .header-links {
@@ -216,7 +212,7 @@ body {
 
 .search-form {
 	display: flex;
-	justify-content: center; /* Center the form */
+	justify-content: center;
 }
 
 .search-container {

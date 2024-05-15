@@ -7,7 +7,7 @@ const Header: React.FC = () => {
 			<div className="header-wrapper">
 				<nav className="header-nav">
 					<Link to="/" className="header-logo">
-						IntVyew
+						<img src="/INTVYEW.png" alt="" />
 					</Link>
 					<ul className="header-links">
 						<li>
